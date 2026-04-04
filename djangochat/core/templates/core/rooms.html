@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %} {% block content %}
+
+<div class="min-h-[80vh] flex flex-col items-center justify-start px-4 py-10">
+  <h1 class="text-4xl font-bold text-white mb-10">Chat Rooms</h1>
+
+  <div class="w-full max-w-3xl grid gap-4">
+    {% for room in rooms %}
+
+    <a
+      href="{% url 'room' room.slug %}"
+      class="group p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition duration-300 shadow-lg"
+    >
+      <div class="flex items-center justify-between">
+        <h2
+          class="text-xl font-semibold text-white group-hover:text-blue-300 transition"
+        >
+          {{ room.name }}
+        </h2>
+
+        <span class="text-white/60 group-hover:text-white transition"> → </span>
+      </div>
+    </a>
+
+    {% empty %}
+
+    <div class="text-center text-white/60 mt-10">No rooms available yet</div>
+
+    {% endfor %}
+    <a
+      href="{% url 'create_room' %}"
+      class="inline-block mb-6 px-5 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-xl"
+    >
+      + Create Room
+    </a>
+  </div>
+</div>
+
+{% endblock %}

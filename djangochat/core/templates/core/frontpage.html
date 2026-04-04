@@ -1,0 +1,59 @@
+{% extends 'core/base.html' %} {% block title %}Welcome | My Site{% endblock %}
+{% block content %}
+
+<div
+  class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-800 text-white flex items-center justify-center px-6"
+>
+  <div class="max-w-4xl text-center">
+    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+      Welcome to <span class="text-purple-400">My Site</span>
+    </h1>
+
+    <p class="mt-6 text-lg md:text-xl text-gray-300">
+      A modern Django platform built with speed, simplicity, and clean UI.
+      Connect, share, and explore amazing features.
+    </p>
+
+    <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+      <a
+        href="/signup/"
+        class="px-8 py-3 rounded-xl bg-purple-500 hover:bg-purple-600 transition font-semibold shadow-lg"
+      >
+        Get Started
+      </a>
+
+      <a
+        href="/login/"
+        class="px-8 py-3 rounded-xl border border-white/30 hover:bg-white/10 transition font-semibold"
+      >
+        Login
+      </a>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+      <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-md">
+        <h3 class="text-xl font-bold mb-2">Fast & Simple</h3>
+        <p class="text-gray-300 text-sm">
+          Built with Django and optimized for performance and clean
+          architecture.
+        </p>
+      </div>
+
+      <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-md">
+        <h3 class="text-xl font-bold mb-2">Modern UI</h3>
+        <p class="text-gray-300 text-sm">
+          Beautiful responsive design powered by Tailwind CSS.
+        </p>
+      </div>
+
+      <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-md">
+        <h3 class="text-xl font-bold mb-2">Secure</h3>
+        <p class="text-gray-300 text-sm">
+          Authentication system built with Django best practices.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
