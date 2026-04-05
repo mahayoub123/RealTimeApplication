@@ -69,3 +69,14 @@ def create_room(request):
             return redirect('rooms')  
 
     return render(request, 'core/create_room.html')
+
+
+@login_required
+def delete_room(request, room_id):
+    room = get_object_or_404(Room, id=room_id)
+
+    if request.method == 'POST':
+        room.delete()
+        return redirect('rooms')  
+
+    return redirect('rooms')
