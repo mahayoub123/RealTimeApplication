@@ -1,1 +1,1 @@
-web: gunicorn --chdir djangochat djangochat.wsgi:application
+web: gunicorn djangochat.wsgi:application

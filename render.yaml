@@ -3,7 +3,7 @@ services:
     name: djangochat
     env: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn --chdir djangochat djangochat.wsgi:application"
+    startCommand: "gunicorn djangochat.wsgi:application"
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.5
